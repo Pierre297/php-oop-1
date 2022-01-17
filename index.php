@@ -63,6 +63,22 @@
             $this->title = $title;
             $this->subhead = $subhead;
         }
+        // METODO FUNZIONE
+        public function getFullTitle()
+        {
+            if (!$this->subhead) {
+                return $this->title;
+            } else {
+                return $this->title . ": " . $this->subhead;
+            }
+        }
+
+        // METODO toString
+        public function __toString()
+        {
+
+            return $this->getFullTitle();
+        }
     }
 
 
