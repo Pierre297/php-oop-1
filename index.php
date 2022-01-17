@@ -77,10 +77,29 @@
         public function __toString()
         {
 
-            return $this->getFullTitle();
+            if (!$this->director) {
+                return "";
+            } else {
+                return "<em>" . " | Directed by:" . $this->director . "<em>";
+            }
         }
     }
 
+
+    // ISTANZE 
+    $f1 = new Film("Matrix", "");
+    $f2 = new Film("Fantozzi 2", "Il ritorno di Fantozzi");
+    $f3 = new Film("Peter Pan", "il ritorno all'isola che non c'e'");
+
+    $f1->director = "";
+    $f2->director = "";
+    $f3->director = "Robin Budd";
+
+
+    // nome complleto studente
+    echo "Film 1: " . " " . $f1->getFullTitle() . $f1 . "<br>";
+    echo "Film 2: " . " " . $f2->getFullTitle() . $f2 . "<br>";
+    echo "Film 3: "  . " " . $f3->getFullTitle() . $f3 . "<br>";
 
     ?>
 
